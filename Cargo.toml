@@ -1,0 +1,33 @@
+[package]
+name = "music_players"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0.104"
+dotenv-ng = "1.0.0"
+librespot = { git = "https://github.com/librespot-org/librespot", version = "0.8.0" }
+poise = "0.6.2"
+tokio = { version = "1.53.1", features = ["full"] }
+songbird = {version = "0.6.0", features = ["serenity", "builtin-queue"] }
+wreq = "0.16"
+wreq-util = "0.2"
+reqwest = { version = "0.12.28", features = ["json"] }
+lazy_static = "1.4.0"
+
+rustls = { version = "0.23.43", features = ["aws-lc-rs"] }
+soundcloud-rs = { git = "https://github.com/fantasybot-red/soundcloud-rs" }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+async-trait = "0.1.92"
+url = "2.5.8"
+regex = "1.13.1"
+tl = "0.7.8"
+
+[dependencies.symphonia]
+version = "0.5"
+features = ["all-formats", "all-codecs"]
+
+[dependencies.serenity]
+version = "0.12"
+features = ["full"]
