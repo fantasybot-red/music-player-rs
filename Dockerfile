@@ -25,12 +25,13 @@ FROM debian:bookworm-slim
 # Install runtime SSL certs if your app makes HTTPS requests
 RUN apt-get update && apt-get install -y \
     ca-certificates \
+    ffmpeg \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
+ENV IS_DOCKER=true
 
 COPY --from=builder /build/target/release/music_players /app/music_players
-
 
 CMD ["./music_players"]
